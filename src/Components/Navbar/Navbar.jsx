@@ -1,10 +1,10 @@
 import React from "react";
-import logo from '../../assets/Fusion_logo_2-removebg-preview.png'
+import logo from '../../assets/v1057-element-30.jpg'
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="pb-6 px-24">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -47,7 +47,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl"><img src={logo} alt="" className="w-10"/><span>FusionHub</span></a>
+          <a className="flex items-center gap-2 normal-case text-xl"><img src={logo} alt="" className="w-10"/><span>FusionHub</span></a>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1 flex gap-12">
