@@ -9,6 +9,7 @@ import Root from "./Main layout/Root";
 import Home from "./Pages/Home/Home";
 import Products from "./Pages/Products/Products";
 import AddProduct from "./Pages/Add Product/AddProduct";
+import Details from "./Components/Details/Details";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/addProduct',
         element: <AddProduct></AddProduct>
+      },
+      {
+        path: '/details/:id',
+        element: <Details></Details>
       }
     ]
   },

@@ -10,18 +10,27 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+import Navbar from '../../Components/Navbar/Navbar';
 
 const Products = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const [products, setProducts] = useState([]);
     const {name} = useParams();
 
-    console.log(name);
+    // console.log(name);
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/products/${name}`)
+    //     .then(res => res.json())
+    //     .then(data => setProducts(data ));
+    // },[name])
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${name}`)
+        fetch(`http://localhost:5000/brandProducts`)
         .then(res => res.json())
-        .then(data => setProducts(data ));
-    },[name])
+        .then(data => {
+            const newData = data.filter(newD => newD.brand.toLowerCase() === name.toLowerCase());
+            setProducts(newData || []);
+        })
+    },[name]);
 
     console.log(products);
     return (
@@ -29,6 +38,7 @@ const Products = () => {
 
 
 <div className="relative h-[100vh] w-[90vw] mx-auto overflow-hidden">
+        <Navbar></Navbar>
       <div className="h-[100vh] w-full" >
         <Swiper
        
