@@ -54,6 +54,7 @@ const Navbar = () => {
             <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/register'}>Register</NavLink>
             <NavLink to={'/addProduct'}>Add Product</NavLink>
+            <NavLink to={'/myCart'}>My Cart</NavLink>
             <NavLink to={'/login'}>Sign in</NavLink>
           </ul>
         </div>

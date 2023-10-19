@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import swal from 'sweetalert';
 
 const Details = () => {
   const [product, setProduct] = useState([]);
@@ -17,12 +18,22 @@ const Details = () => {
   const { img, brand, type, price, name, details } = product || {};
 
   const handleAddToCart = () => {
-    fetch('/cart', {
+
+    const cartData = {img, brand, type, price, name, details};
+
+    fetch('http://localhost:5000/cart', {
         method: "POST",
         headers: {
             'content-type' : 'application/json'
         },
-        body: JSON.stringify(product)
+        body: JSON.stringify(cartData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        if(data.insertedId) {
+            swal("Good job!", "Successfully Added to cart!", "success");
+        }
     })
   }
 
