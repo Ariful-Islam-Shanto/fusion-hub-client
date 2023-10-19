@@ -25,11 +25,11 @@ const Products = () => {
 
     console.log(products);
     return (
-        <div>
+        <div className='w-full'>
 
 
-<div className="relative h-[100vh] w-[100vw] overflow-hidden">
-      <div className="h-[100vh] w-[100vw]" >
+<div className="relative h-[100vh] w-[90vw] mx-auto overflow-hidden">
+      <div className="h-[100vh] w-full" >
         <Swiper
        
         loop={true}
@@ -39,13 +39,13 @@ const Products = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="w-full h-full bg-cover bg-center"
       >
-        <SwiperSlide className="bg-cover bg-center">
+        <SwiperSlide className="bg-cover h-full w-full bg-center">
           <img className="h-full w-full" src={products[0]?.advImage} />
         </SwiperSlide>
-        <SwiperSlide  className="bg-cover bg-center">
+        <SwiperSlide  className="bg-cover h-full w-full bg-center">
           <img className="h-full w-full" src={products[1]?.advImage} />
         </SwiperSlide>
-        <SwiperSlide  className="bg-cover bg-center">
+        <SwiperSlide  className="bg-cover h-full w-full bg-center">
           <img className="h-full w-full " src={products[2]?.advImage} />
         </SwiperSlide>
      

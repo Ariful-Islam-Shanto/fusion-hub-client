@@ -53,6 +53,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 flex gap-12">
             <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/register'}>Register</NavLink>
+            <NavLink to={'/addProduct'}>Add Product</NavLink>
             <NavLink to={'/login'}>Sign in</NavLink>
           </ul>
         </div>

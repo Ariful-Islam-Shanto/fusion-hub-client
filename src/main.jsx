@@ -8,6 +8,7 @@ import "./index.css";
 import Root from "./Main layout/Root";
 import Home from "./Pages/Home/Home";
 import Products from "./Pages/Products/Products";
+import AddProduct from "./Pages/Add Product/AddProduct";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/products/:name',
         element: <Products></Products>
+      },
+      {
+        path: '/addProduct',
+        element: <AddProduct></AddProduct>
       }
     ]
   },
