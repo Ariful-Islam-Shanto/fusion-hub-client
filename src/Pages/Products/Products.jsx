@@ -17,12 +17,6 @@ const Products = () => {
     const [products, setProducts] = useState([]);
     const {name} = useParams();
 
-    // console.log(name);
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/products/${name}`)
-    //     .then(res => res.json())
-    //     .then(data => setProducts(data ));
-    // },[name])
     useEffect(() => {
         fetch(`http://localhost:5000/brandProducts`)
         .then(res => res.json())
@@ -32,7 +26,7 @@ const Products = () => {
         })
     },[name]);
 
-    console.log(products);
+
     return (
         <div className='w-full'>
 
@@ -96,7 +90,7 @@ const Products = () => {
 <div>
 
 
-            <div className='grid grid-cols-2 gap-4 py-12 px-24'>
+            <div className='grid grid-cols-3 gap-4 py-12 px-24'>
                 {
                     products.map(product => <Product key={product._id} product={product}></Product>)
                 }
