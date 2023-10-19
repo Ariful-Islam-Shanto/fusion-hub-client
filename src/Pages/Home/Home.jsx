@@ -1,14 +1,16 @@
 import React from 'react';
 import Banner from '../../Components/Banner/Banner';
 import Navbar from '../../Components/Navbar/Navbar';
+import Brands from '../../Components/Brands/Brands';
 
 const Home = () => {
     return (
         <div>
-            <div className='py-6'>
-            <Navbar></Navbar>
+            <div className='py-6 bg-[#fff1ec]'>
+            <Navbar className=""></Navbar>
             <Banner></Banner>
             </div>
+            <Brands></Brands>
         </div>
     );
 };

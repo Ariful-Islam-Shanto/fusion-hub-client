@@ -9,6 +9,7 @@ const Banner = () => {
         backgroundImage : `url(${bg1})`
     }
     return (
+        <div className=''>
         <div style={bgOne} className='px-24 flex gap-12 items-center justify-center  '>
             
             <div className='flex-1 grid gap-4 grid-cols-3 h-full w-full'>
@@ -22,7 +23,7 @@ const Banner = () => {
                 <button className='bg-[#23856d] text-white px-5 py-2 border-none'>Shop Now</button>
             </div>
         </div>
-
+</div>
     );
 };
 
