@@ -6,7 +6,7 @@ import Brands from '../../Components/Brands/Brands';
 const Home = () => {
     return (
         <div>
-            <div className='py-6 bg-[#fff1ec]'>
+            <div className='py-6 '>
             <Navbar className=""></Navbar>
             <Banner></Banner>
             </div>

@@ -20,7 +20,7 @@ const Banner = () => {
             <div className='flex-1 space-y-8'>
                 <h1 className='text-6xl text-black font-bold'> Where <span>Fashion</span> Meets Choice</h1>
                 <p>Discover Endless Possibilities in Fashion. Welcome to StyleJunction, where your unique style finds its ultimate expression. Explore the latest trends from Nike, Adidas, Gucci, Zara, H&M, Levi's, and more. Your destination for fashion, your canvas for self-expression.</p>
-                <button className='bg-[#23856d] text-white px-5 py-2 border-none'>Shop Now</button>
+                <button className='bg-[#c80042] text-white px-5 py-2 border-none'>Shop Now</button>
             </div>
         </div>
 </div>

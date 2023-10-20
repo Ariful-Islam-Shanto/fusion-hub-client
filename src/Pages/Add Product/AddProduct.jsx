@@ -37,7 +37,7 @@ const AddProduct = () => {
         })
     }
     return (
-        <div className=' w-full h-[100vh] bg-cover bg-center backdrop-blur-3xl bg-blend-overlay'>
+        <div className=' w-full h-[100vh] bg-cover bg-center backdrop-blur-3xl bg-blend-overlay py-6'>
             
             <Navbar></Navbar>
 

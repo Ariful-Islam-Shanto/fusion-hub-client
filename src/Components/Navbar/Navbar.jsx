@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from '../../assets/v1057-element-30.jpg'
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Auth Provider/AuthProvider";
 
 const Navbar = () => {
+
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut();
+  }
+
   return (
     <div className="pb-6 px-24 bg-transparent">
       <div className="navbar ">
@@ -53,14 +61,29 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 flex gap-12">
             <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/register'}>Register</NavLink>
+          {
+            user && <>
             <NavLink to={'/addProduct'}>Add Product</NavLink>
             <NavLink to={'/myCart'}>My Cart</NavLink>
+            </>
+          }
             <NavLink to={'/login'}>Sign in</NavLink>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-[#52b788] text-white"  >Sign in</a>
-        </div>
+   
+   {
+     user ? <><div className='flex flex-col items-center justify-center md:flex-row lg:flex-row xl:flex-row'> 
+     <img src={user.photoURL ? user.photoURL : "" } alt="" className="w-10 h-10 rounded-full mr-0 md:mr-4 lg:mr-4 xl:mr-4"/>
+     <span className={`${location.pathname === '/' ? 'text-gray-200 '
+     : 'text-black'
+     } font-bold mr-2 `}>{user.displayName ? user.displayName : user.email}</span> 
+     </div>
+     <Link to={'/login'} onClick={handleLogOut} className="bg-[#c80042] text-sm  text-white rounded-md py-2 px-4">Signout</Link>
+     </>  :
+     <Link to={'/login'} className="bg-[#c80042]   text-white rounded-md py-2 px-5">Sign in</Link>
+   }
+ </div>
       </div>
     </div>
   );

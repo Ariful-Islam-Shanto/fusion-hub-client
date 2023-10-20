@@ -42,7 +42,7 @@ const MyCart = () => {
   };
 
   return (
-    <div className="max-w-screen-xl">
+    <div className="max-w-screen-xl py-6">
       <Navbar></Navbar>
       <div className="grid grid-cols-1  py-12 gap-6">
         <div className="overflow-x-auto">
