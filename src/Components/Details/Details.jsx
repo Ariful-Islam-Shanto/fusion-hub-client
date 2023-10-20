@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import swal from 'sweetalert';
+import Navbar from "../Navbar/Navbar";
 
 const Details = () => {
   const [product, setProduct] = useState([]);
@@ -39,22 +40,25 @@ const Details = () => {
 
   console.log(id);
   return (
-    <div className="w-full h-100vh">
-      <div className="flex w-[80vw] mx-auto h-[100vh] items-center justify-between gap-4">
+    <div className="w-full h-full">
+        <div className="py-6">
+        <Navbar ></Navbar>
+        </div>
+      <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row px-3 md:px-6 lg:px-12 xl:px-24 mx-auto h-[80vh]  items-end justify-between gap-4">
         <div className="w-full h-[80vh] my-auto flex-1">
         <img src={img} alt="" className="w-full h-full hover:-translate-y-3 transition-all ease-in-out rounded-md drop-shadow-md hover:drop-shadow-lg" />
         </div>
-        <div className="flex-1 space-y-2">
-          <div className="flex gap-6 flex-col w-full items-left justify-between">
-            <h1 className="text-6xl text-black font-bold">{name}</h1>
-            <p className="text-2xl font-medium text-[#c80042]">{price}</p>
+        <div className="flex-1 space-y-6 ">
+          <div className="flex gap-8 flex-col w-full items-left justify-between">
+            <h1 className="text-4xl text-center md:text-left lg:text-left xl:text-left md:text-5xl lg:text-4xl xl:text-5xl text-black font-bold">{name}</h1>
+            <p className="text-2xl text-center md:text-left lg:text-left xl:text-left font-medium text-[#c80042]">Price:{price}</p>
           </div>
-          <div className="flex flex-col gap-6  w-full items-left justify-between">
-            <p> Brand: {brand}</p>
-            <p> Type: {type}</p>
+          <div className="flex flex-col w-full mb-6  items-left justify-between">
+            <p className="text-2xl text-center md:text-left lg:text-left xl:text-left text-black font-bold"> Brand: {brand}</p>
+            <p className="text-2xl text-center md:text-left lg:text-left xl:text-left text-gray-700 font-bold"> Type: {type}</p>
           </div>
-          <p className="text-gray-600 font-medium tracking-wider">{details}</p>
-          <div className='w-full'>
+          <p className="text-gray-600 text-2xl text-center md:text-left lg:text-left xl:text-left  font-medium   md:tracking-wide lg:tracking-wider xl:tracking-widest lg:leading-6 xl:leading-8">{details}</p>
+          <div className='w-full flex items-center justify-center md:justify-start lg:justify-start xl:justify-start'>
             <button onClick={handleAddToCart}  className='px-7 py-2 border-2 border-black rounded-sm hover:bg-black text-black hover:text-white '>Add to cart</button>
         </div>
         </div>

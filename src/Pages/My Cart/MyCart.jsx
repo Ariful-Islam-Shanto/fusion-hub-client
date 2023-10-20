@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "../Products/Product";
 import Navbar from "../../Components/Navbar/Navbar";
+import { FaCross, FaDeleteLeft } from "react-icons/fa6";
 
 const MyCart = () => {
   const [cart, setCart] = useState([]);
@@ -42,10 +43,11 @@ const MyCart = () => {
   };
 
   return (
-    <div className="max-w-screen-xl py-6">
+    <div className=" mx-auto py-6">
       <Navbar></Navbar>
-      <div className="grid grid-cols-1  py-12 gap-6">
-        <div className="overflow-x-auto">
+      <div className="grid grid-cols-1 px-3 md:px-6 lg:px-12 xl:px-24  py-12 gap-6">
+      <h1 className='text-2xl md:text-4xl lg:text-4xl xl:text-4xl text-center text-black font-extrabold py-6'>My Shopping Cart</h1>
+        <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}
             <thead className="flex-1">
@@ -55,10 +57,10 @@ const MyCart = () => {
                     <input type="checkbox" className="checkbox" />
                   </label>
                 </th>
-                <th>Name</th>
-                <th>Brand</th>
-                <th>Type</th>
-                <th></th>
+                <th className="text-xl text-black font-bold">Name</th>
+                <th className="text-xl text-black font-bold">Brand</th>
+                <th className="text-xl text-black font-bold">Type</th>
+                <th className="text-xl text-black font-bold">Action</th>
               </tr>
             </thead>
             {cart?.map((singleCart) => (
@@ -82,22 +84,22 @@ const MyCart = () => {
                       </div>
                     </div>
                   </td>
-                  <td className="">
+                  <td className="text-black font-medium">
                     {singleCart?.brand}
                     <br />
                     <span className="badge badge-ghost badge-sm">
                       {singleCart?.type}
                     </span>
                   </td>
-                  <td>{singleCart.type}</td>
+                  <td className="text-black font-medium">{singleCart.type}</td>
                   <th>
                     <button
                       onClick={() => {
                         handleDelete(singleCart._id);
                       }}
-                      className="btn btn-ghost btn-xs"
+                      className="btn"
                     >
-                      Delete
+                      <FaDeleteLeft className=" text-xl"></FaDeleteLeft>
                     </button>
                   </th>
                 </tr>

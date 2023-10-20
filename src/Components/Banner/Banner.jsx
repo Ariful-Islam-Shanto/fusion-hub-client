@@ -10,26 +10,16 @@ const Banner = () => {
     <div className="">
       <div
 
-        className="px-24 flex flex-row-reverse gap-12 items-center justify-center h-full py-6"
+        className=" px-3 md:px-6 lg:px-12 xl:px-24 flex flex-col md:flex-row-reverse lg:flex-row-reverse xl:flex-row-reverse gap-12 items-center justify-center h-full md:py-8 lg:py-12 xl:py-12"
       >
-        <div className="flex-1 h-[500px] w-2/3">
+        <div className="flex-1 md:h-[450px] lg:h-[500px] xl:h-[500px] w-2/3">
             <img src={url} alt="" className="h-full rounded-md rounded-bl-[50px] w-full"/>
         </div>
-        {/* <div className="flex-1 grid gap-4 grid-cols-3 h-full w-full">
-          <div className="col-span-1 row-span-2 h-full w-full">
-            <img src={img1} alt="" className=" h-full w-full" />
-          </div>
-          <div className="col-span-2 row-span-4 h-full w-full">
-            <img src={img2} alt="" className=" h-full w-full" />
-          </div>
-          <div className="col-span-1 row-span-2 h-full w-full">
-            <img src={img3} alt="" className=" h-full w-full" />
-          </div>
-        </div> */}
-        <div className="flex-1 space-y-8">
-          <h1 className="text-6xl text-black font-extrabold">
+       
+        <div className="flex-1 flex items-center md:items-start lg:items-start xl:items-start flex-col md:flex-col lg:flex-col xl:flex-col space-y-8">
+          <h1 className="text-center md:text-left lg:text-left xl:text-left text-5xl md:text-6xl lg:text-6xl xl:text-6xl text-black font-extrabold">
             {" "}
-            LET’S EXPLORE UNIQUE CLOTHES.
+            LET’S EXPLORE UNIQUE FASHION.
           </h1>
           <p>
           Live for Influential and Innovative fashion!

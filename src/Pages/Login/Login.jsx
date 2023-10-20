@@ -62,13 +62,21 @@ const Login = () => {
     }
 
 
+    const bg = {
+        backgroundImage : `url('https://i.ibb.co/tYpncR2/3907317.jpg')`
+    }
+
 
   return (
-    < div className='bg-blue-50 py-6'>
+    < div className=' py-6'>
     <Navbar></Navbar>
-    <div className="flex items-center justify-center py-24">
-    <div className="relative flex w-full md:w-4/5 lg:w-3/5 xl:w-2/5 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+    <div  className="  px-3  md:px-6 lg:px-12 xl:px24 py-12">
+        {/* <div className='flex-1'>
+            <img src="https://i.ibb.co/tYpncR2/3907317.jpg" alt="" />
+        </div> */}
+    <div style={bg} className="relative bg-cover flex-1 flex w-full md:w-full lg:w-3/5 xl:w-2/5 flex-col mx-auto text-gray-700">
    
+    <div className=' mx-auto w-full bg-transparent backdrop-blur-2xl'>
       <h1 className="text-4xl text-center text-gray-800 font-bold py-8 pb-6 ">Login your account</h1>
       <form onSubmit={handleLogIn}>
       <div className="flex flex-col gap-4 p-6">
@@ -97,20 +105,22 @@ const Login = () => {
       <p onClick={handleForgetPassword} className="text-gray-400 p-6 ">Forget password?</p>
       <div className="p-6 pt-0">
         <button 
-          className="block w-full select-none rounded-lg bg-[#c80042] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          className="block w-full select-none rounded-lg bg-blue-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           type="submit"
           data-ripple-light="true"
         >
           Sign In
         </button>
-        <p className='text-center my-4'>
+        <div className=''>
+        <p className='text-center my-6'>
           or Sign in with
         </p>
-        <div className='flex items-center justify-center gap-4'>
+        <div className='flex  items-center justify-center gap-4'>
         <button onClick={handleGoogleLogin} className='bg-white px-5 py-2 flex gap-2 items-center justify-center drop-shadow-md rounded-xl'>
           <FaGoogle></FaGoogle> <span>Google</span>
         </button>
        
+        </div>
         </div>
         <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
           Don't have an account?
@@ -123,6 +133,7 @@ const Login = () => {
         </p>
       </div>
       </form>
+      </div>
     </div>
   </div>
   </div>

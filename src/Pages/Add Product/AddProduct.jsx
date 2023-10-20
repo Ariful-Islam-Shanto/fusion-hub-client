@@ -3,7 +3,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 
 const AddProduct = () => {
 
-    const handleAddProduct = e => {
+    const handleUpdate = e => {
         e.preventDefault();
         const form = new FormData(e.target);
         const name = form.get('name');
@@ -43,7 +43,7 @@ const AddProduct = () => {
 
             <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 h-full shadow-none">
  
-  <form onSubmit={handleAddProduct} className="mt-8 mb-2 w-1/2 rounded-md mx-auto bg-white drop-shadow-md px-6 py-10 space-y-2">
+  <form onSubmit={handleUpdate} className="mt-8 mb-2 w-full md:w-full lg:w-4/5 xl:w-4/5 rounded-md mx-auto bg-white  px-6 py-10 space-y-2">
   <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-gray-900  antialiased ">
     Add a product
   </h4>
@@ -126,7 +126,7 @@ const AddProduct = () => {
       </div>
   
     <button type='submit'
-      className="mt-6 block  w-full select-none rounded-lg bg-sky-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      className="mt-6 block  w-full select-none rounded-lg bg-[#ba1f53] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
       data-ripple-light="true"
     >
       Add Product
