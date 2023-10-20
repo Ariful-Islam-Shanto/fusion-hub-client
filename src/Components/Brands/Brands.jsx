@@ -14,9 +14,12 @@ const Brands = () => {
 
     console.log(brands);
     return (
-        <div>
-            <h1>brands : {brands.length}</h1>
-            <div className='grid grid-cols-6 gap-2 py-24 items-center justify-center px-24'>
+        <div className='px-24 py-24 space-y-12'>
+            <div className='w-2/3 mx-auto space-y-6'>
+            <h1 className='text-4xl text-center text-black font medium'>Discover Our Prestigious Brand Collaborations.</h1>
+            <p className='leading-6 text-center'> Embark on a Journey of Excellence. Explore Our Distinguished Brand Partnerships, Where Quality Meets Innovation. From Fashion to Technology, Trust in the Best.</p>
+            </div>
+            <div className='grid grid-cols-3 gap-2  items-center justify-center '>
             {
                 brands.map(brand =>    
                 <div onClick={() => {
