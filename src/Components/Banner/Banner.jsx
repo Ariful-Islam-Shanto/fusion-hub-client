@@ -10,7 +10,7 @@ const Banner = () => {
     <div className="">
       <div
 
-        className="px-24 flex flex-row-reverse gap-12 items-center justify-center h-[100vh] "
+        className="px-24 flex flex-row-reverse gap-12 items-center justify-center h-full py-6"
       >
         <div className="flex-1 h-[500px] w-2/3">
             <img src={url} alt="" className="h-full rounded-md rounded-bl-[50px] w-full"/>

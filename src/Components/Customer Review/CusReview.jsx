@@ -9,8 +9,8 @@ const CusReview = () => {
             <div className='flex items-center justify-end'>
             <img src={url} alt="" className='h-[400px] '/>
             </div>
-            <div>
-            <h1 className='text-4xl mb-3 text-black font-normal leading-10'>“Thank you for all your help. Your Product was excellent and very Fast. Many thanks for you kind and efficient Product. I never try this kind of product and will definitely continue to recommend your Product to others in the future.”</h1>
+            <div className='w-2/3'>
+            <h1 className='text-4xl mb-3 text-black font-normal leading-10'>“Thank you for all your help. Your <span className='text-[#ba1f53]'>Product</span> was excellent and very Fast. Many thanks for you kind and efficient <span className='text-[#ba1f53]'>Product</span>. I never try this kind of product and will definitely continue to recommend your <span className='text-[#ba1f53]'>Product</span> to others in the future.”</h1>
             <p className='text-sm'><span className='text-black font-medium'>kevin Pietersen</span>, Customer</p>
             </div>
         </div>
