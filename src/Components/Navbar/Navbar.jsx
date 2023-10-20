@@ -55,19 +55,19 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="flex items-center gap-2 normal-case text-xl"><img src={logo} alt="" className="w-10"/><span>FusionHub</span></a>
+          <a className="flex items-center gap-2 normal-case text-xl"><img src={logo} alt="" className="w-10"/><p className=""><span className="text-[#a32650] text-bold text-2xl">FUSION</span>HUB</p></a>
         </div>
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1 flex gap-12">
-            <NavLink to={'/'}>Home</NavLink>
-            <NavLink to={'/register'}>Register</NavLink>
+            <NavLink to={'/'}>HOME</NavLink>
+            <NavLink to={'/register'}>REGISTER</NavLink>
           {
             user && <>
-            <NavLink to={'/addProduct'}>Add Product</NavLink>
-            <NavLink to={'/myCart'}>My Cart</NavLink>
+            <NavLink to={'/addProduct'}>ADD PRODUCT</NavLink>
+            <NavLink to={'/myCart'}>MY CART</NavLink>
             </>
           }
-            <NavLink to={'/login'}>Sign in</NavLink>
+            <NavLink to={'/login'}>SIGN IN</NavLink>
           </ul>
         </div>
         <div className="navbar-end">
@@ -79,9 +79,9 @@ const Navbar = () => {
      : 'text-black'
      } font-bold mr-2 `}>{user.displayName ? user.displayName : user.email}</span> 
      </div>
-     <Link to={'/login'} onClick={handleLogOut} className="bg-[#c80042] text-sm  text-white rounded-md py-2 px-4">Signout</Link>
+     <Link to={'/login'} onClick={handleLogOut} className="bg-[#a32650] text-sm  text-white rounded-md py-2 px-4">Signout</Link>
      </>  :
-     <Link to={'/login'} className="bg-[#c80042]   text-white rounded-md py-2 px-5">Sign in</Link>
+     <Link to={'/login'} className="bg-[#a32650]   text-white rounded-md py-2 px-5">Sign in</Link>
    }
  </div>
       </div>

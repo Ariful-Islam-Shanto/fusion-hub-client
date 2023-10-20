@@ -14,12 +14,12 @@ const Brands = () => {
 
     console.log(brands);
     return (
-        <div className='px-24 py-24 space-y-12'>
+        <div className='px-24 py-12 space-y-12'>
             <div className='w-2/3 mx-auto space-y-6'>
             <h1 className='text-4xl text-center text-black font medium'>Discover Our Prestigious Brand Collaborations.</h1>
             <p className='leading-6 text-center'> Embark on a Journey of Excellence. Explore Our Distinguished Brand Partnerships, Where Quality Meets Innovation. From Fashion to Technology, Trust in the Best.</p>
             </div>
-            <div className='grid grid-cols-3 gap-2  items-center justify-center '>
+            <div className='grid grid-cols-3 gap-[1px]  items-center justify-center bg-[#f6eaee]'>
             {
                 brands.map(brand =>    
                 <div onClick={() => {
