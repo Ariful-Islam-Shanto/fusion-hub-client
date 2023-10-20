@@ -19,11 +19,24 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import Navbar from "../../Components/Navbar/Navbar";
 
+
 const Products = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [products, setProducts] = useState([]);
+  const [slide, setSlide] = useState({});
   const [loading, setLoading] = useState(true)
   const { name } = useParams();
+
+ useEffect(() => {
+    setLoading(true);
+    fetch(`http://localhost:5000/brands/${name}`)
+    .then(res => res.json())
+    .then(data => {
+        setSlide(data || {});
+        setLoading(false);
+    })
+ },[name])
+
 
   useEffect(() => {
     fetch(`http://localhost:5000/brandProducts`)
@@ -38,6 +51,8 @@ const Products = () => {
       });
   }, [name]);
 
+
+  
   return (
     <div className="w-full">
         <div className="py-6">
@@ -79,13 +94,13 @@ const Products = () => {
             className="w-full h-full bg-cover bg-center"
           >
             <SwiperSlide className="bg-cover h-full w-full bg-center">
-              <img className="h-full w-full" src={products[0]?.advImage} />
+              <img className="h-full w-full" src={products[0]?.advImage || slide.advImage1} />
             </SwiperSlide>
             <SwiperSlide className="bg-cover h-full w-full bg-center">
-              <img className="h-full w-full" src={products[1]?.advImage} />
+              <img className="h-full w-full" src={products[1]?.advImage || slide.advImage2} />
             </SwiperSlide>
             <SwiperSlide className="bg-cover h-full w-full bg-center">
-              <img className="h-full w-full " src={products[2]?.advImage} />
+              <img className="h-full w-full " src={products[2]?.advImage || slide.advImage3} />
             </SwiperSlide>
           </Swiper>
         </div>
@@ -102,13 +117,13 @@ const Products = () => {
             className="w-[300px]"
           >
             <SwiperSlide>
-              <img src={products[0]?.advImage} className="h-12 w-full"/>
+              <img src={products[0]?.advImage || slide.advImage1} className="h-12 w-full"/>
             </SwiperSlide>
             <SwiperSlide>
-              <img src={products[1]?.advImage} className="h-12 w-full"/>
+              <img src={products[1]?.advImage || slide.advImage2} className="h-12 w-full"/>
             </SwiperSlide>
             <SwiperSlide>
-              <img src={products[2]?.advImage} className="h-12 w-full"/>
+              <img src={products[2]?.advImage || slide.advImage3} className="h-12 w-full"/>
             </SwiperSlide>
             <SwiperSlide></SwiperSlide>
             <SwiperSlide></SwiperSlide>
@@ -118,7 +133,7 @@ const Products = () => {
       </div>
 
       <div className="py-24">
-      <h1 className='text-2xl md:text-4xl lg:text-4xl xl:text-4xl text-center text-black font-extrabold py-6 pt-12'>Available products from<span className='text-[#a32650]'>{products[0]?.brand}</span></h1>
+      <h1 className='text-2xl md:text-4xl lg:text-4xl xl:text-4xl text-center text-black font-extrabold py-6 pt-12'>Available products from<span className='text-[#a32650] ml-4'>{products[0]?.brand}</span></h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-12 md:gap-4 lg:gap-4 xl:gap-4 py-12 px-3 md:px-6 lg:px-12 xl:px-24 ">
           {products?.map((product) => (
             <Product key={product._id} product={product}></Product>

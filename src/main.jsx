@@ -16,6 +16,7 @@ import Register from "./Pages/Register/Register";
 import AuthProvider from "./Auth Provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import Login from "./Pages/Login/Login";
+import PrivateRoute from "./Private Route/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,23 +37,23 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:name',
-        element: <Products></Products>
+        element: <Products></Products>,
       },
       {
         path: '/addProduct',
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute> 
       },
       {
         path: '/details/:id',
-        element: <Details></Details>
+        element: <PrivateRoute> <Details></Details> </PrivateRoute>
       },
       {
         path: '/myCart',
-        element: <MyCart></MyCart>
+        element: <PrivateRoute> <MyCart></MyCart> </PrivateRoute>
       },
       {
         path: '/update/:id',
-        element: <Update></Update>,
+        element: <PrivateRoute> <Update></Update> </PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/brandProducts/${params.id}`)
       }
     ]
