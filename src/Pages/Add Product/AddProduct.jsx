@@ -41,9 +41,9 @@ const AddProduct = () => {
             
             <Navbar></Navbar>
 
-            <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 h-full shadow-none">
+            <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border px-8 text-gray-700 h-full shadow-none">
  
-  <form onSubmit={handleUpdate} className="mt-8 mb-2 w-full md:w-full lg:w-4/5 xl:w-4/5 rounded-md mx-auto bg-white  px-6 py-10 space-y-2">
+  <form onSubmit={handleUpdate} className="mt-8 mb-2 w-full md:w-full lg:w-4/5 xl:w-4/5 rounded-md mx-auto px-6 bg-white py-10 space-y-2">
   <h4 className="block text-center font-sans text-2xl font-semibold leading-snug tracking-normal text-gray-900  antialiased ">
     Add a product
   </h4>
@@ -51,9 +51,9 @@ const AddProduct = () => {
     Add your desired product.
   </p>
 
-    <div className='flex items-center justify-center gap-4'>
-    <div className="mb-4 flex flex-col gap-6 w-full">
-      <div className="relative h-11 w-full">
+    <div className='flex w-full items-center justify-center gap-6'>
+    <div className="mb-4  flex flex-col gap-6  w-full">
+      <div className="relative h-11 w-full ">
         <input type='text' name='name' required
           className="peer h-full bg-white w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200  placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
           placeholder=" "
@@ -62,7 +62,7 @@ const AddProduct = () => {
           Name
         </label>
       </div>
-      <div className="relative h-11 w-full min-w-[200px]">
+      <div className="relative h-11 w-full ">
         <input type='text' name='brand' required
           className="peer h-full w-full bg-white rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
           placeholder=" "
@@ -71,7 +71,7 @@ const AddProduct = () => {
           Brand
         </label>
       </div>
-      <div className="relative h-11 w-full min-w-[200px]">
+      <div className="relative h-11 w-full">
         <input 
           type="text" name='type' required
           className="peer h-full w-full bg-white rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
@@ -84,7 +84,7 @@ const AddProduct = () => {
     </div>
 
     <div className="mb-4 flex flex-col gap-6 w-full">
-      <div className="relative h-11 w-full min-w-[200px]">
+      <div className="relative h-11 w-full ">
         <input type='text' name='price' required
           className="peer h-full w-full bg-white rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
           placeholder=" "
@@ -93,7 +93,7 @@ const AddProduct = () => {
           Price
         </label>
       </div>
-      <div className="relative h-11 w-full min-w-[200px]">
+      <div className="relative h-11 w-full ">
         <input type='text' name='rating' required
           className="peer h-full w-full bg-white rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
           placeholder=" "
@@ -102,7 +102,7 @@ const AddProduct = () => {
           Rating
         </label>
       </div>
-      <div className="relative h-11 w-full min-w-[200px]">
+      <div className="relative h-11 w-full ">
         <input 
           type="text" name='details' required
           className="peer h-full w-full bg-white rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
