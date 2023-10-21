@@ -6,6 +6,7 @@ import auth from '../Firebase/firebase.config';
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
+    const [modeTheme, setModeTheme] = useState(null);
     const [user, setUser] = useState([]);
     
     
@@ -43,7 +44,9 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-
+    const handleMode = (mode) => {
+        setModeTheme(mode);
+    }
 
     //? Observe auth state change (get the currently signed-in user)
     useEffect(() => {
@@ -56,7 +59,7 @@ const AuthProvider = ({children}) => {
         }
     },[])
 
-    const authInfo = {user, createUser, userLogIn, githubLogin, googleLogin, facebookLogin, logOut};
+    const authInfo = {user, modeTheme, createUser, handleMode, userLogIn, githubLogin, googleLogin, facebookLogin, logOut};
 
     return (
         <AuthContext.Provider value={authInfo}>

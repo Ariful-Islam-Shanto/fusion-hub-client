@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Auth Provider/AuthProvider';
 
 const CusReview = () => {
+    const {modeTheme} = useContext(AuthContext);
 
     const url = "https://i.ibb.co/X86D9qy/Customer-review.jpg";
     return (
@@ -10,8 +12,8 @@ const CusReview = () => {
             <img src={url} alt="" className='h-full md:h-[400px] lg:h-[400px] xl:h-[400px] '/>
             </div>
             <div className= 'w-full lg:w-3/4 xl:w-2/3'>
-            <h1 className='text-3xl text-center md:text-left lg:text-left xl:text-left md:text-3xl lg:text-3xl xl:text-[32px] mb-3 text-black font-normal leading-10'>“Thank you for all your help. Your <span className='text-[#ba1f53]'>Product</span> was excellent and very Fast. Many thanks for you kind and efficient <span className='text-[#ba1f53]'>Product</span>. I never try this kind of product and will definitely continue to recommend your <span className='text-[#ba1f53] '>Product</span> to others in the future.”</h1>
-            <p className='text-sm text-center md:text-left lg:text-left xl:text-left'><span className='text-black font-medium'>kevin Pietersen</span>, Customer</p>
+            <h1 className={`text-3xl text-center md:text-left lg:text-left xl:text-left md:text-3xl lg:text-3xl xl:text-[32px] mb-3 ${modeTheme === 'dark' ? 'text-white' : 'text-black'} font-normal leading-10`}>“Thank you for all your help. Your <span className='text-[#ba1f53]'>Product</span> was excellent and very Fast. Many thanks for you kind and efficient <span className='text-[#ba1f53]'>Product</span>. I never try this kind of product and will definitely continue to recommend your <span className='text-[#ba1f53] '>Product</span> to others in the future.”</h1>
+            <p className='text-sm text-center md:text-left lg:text-left xl:text-left'><span className={`${modeTheme === 'dark' ? 'text-white' : 'text-black'} font-medium`}>kevin Pietersen</span>, Customer</p>
             </div>
         </div>
         </div>

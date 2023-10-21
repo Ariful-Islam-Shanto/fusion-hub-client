@@ -17,11 +17,13 @@ import AuthProvider from "./Auth Provider/AuthProvider";
 import { Toaster } from "react-hot-toast";
 import Login from "./Pages/Login/Login";
 import PrivateRoute from "./Private Route/PrivateRoute";
+import Error from "./Components/ErrorPage/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -54,7 +56,7 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <PrivateRoute> <Update></Update> </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/brandProducts/${params.id}`)
+        loader: ({params}) => fetch(`https://fusion-hub-server.vercel.app/brandProductss/${params.id}`)
       }
     ]
   },

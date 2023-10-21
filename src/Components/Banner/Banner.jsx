@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import bg1 from "../../assets/svg (1).png";
 import img1 from "../../assets/image1.jpg";
 import img2 from "../../assets/image2.jpg";
 import img3 from "../../assets/image3.jpg";
+import { AuthContext } from "../../Auth Provider/AuthProvider";
 
 const Banner = () => {
+  const {modeTheme} = useContext(AuthContext);
+
+  console.log(modeTheme);
   const url = "https://i.ibb.co/8Xtcfnw/6f5b5dc8c22e32c6a73f9d8f1cf3b2cc.jpg";
   return (
     <div className="">
@@ -17,7 +21,7 @@ const Banner = () => {
         </div>
        
         <div className="flex-1 flex items-center md:items-start lg:items-start xl:items-start flex-col md:flex-col lg:flex-col xl:flex-col space-y-8">
-          <h1 className="text-center md:text-left lg:text-left xl:text-left text-5xl md:text-6xl lg:text-6xl xl:text-6xl text-black font-extrabold">
+          <h1 className={`${modeTheme === 'dark' ? 'text-white' : 'text-black'} text-center md:text-left lg:text-left xl:text-left text-5xl md:text-6xl lg:text-6xl xl:text-6xl  font-extrabold`}>
             {" "}
             LET’S EXPLORE UNIQUE FASHION.
           </h1>

@@ -7,17 +7,17 @@ const AddProduct = () => {
         e.preventDefault();
         const form = new FormData(e.target);
         const name = form.get('name');
-        const brand = form.get('brand')
-        const type = form.get('type')
-        const price = form.get('price')
-        const rating = form.get('rating')
-        const description = form.get('description')
-        const img = form.get('photo')
+        const brand = form.get('brand');
+        const type = form.get('type');
+        const price = form.get('price');
+        const rating = form.get('rating');
+        const details = form.get('details');
+        const img = form.get('photo');
 
-        const product = {name, brand, type, price, rating, description, img};
+        const product = {name, brand, type, price, rating, details, img};
         console.log(product);
 
-        fetch('http://localhost:5000/addProduct', {
+        fetch('https://fusion-hub-server.vercel.app/addProduct', {
             method: "POST",
             headers: {
                 'content-type' : 'application/json'
@@ -31,7 +31,7 @@ const AddProduct = () => {
                     title: "Good job!",
                     text: "Successfully Added Product!",
                     icon: "success",
-                    button: "Aww yiss!",
+                    button: "Okay!",
                   });
             }
         })
@@ -104,7 +104,7 @@ const AddProduct = () => {
       </div>
       <div className="relative h-11 w-full min-w-[200px]">
         <input 
-          type="text" name='description' required
+          type="text" name='details' required
           className="peer h-full w-full bg-white rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
           placeholder=" "
         />
@@ -131,15 +131,6 @@ const AddProduct = () => {
     >
       Add Product
     </button >
-    <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-      Already have an account?
-      <a
-        className="font-medium text-pink-500 transition-colors hover:text-blue-700"
-        href="#"
-      >
-        Sign In
-      </a>
-    </p>
 
  
   </form>

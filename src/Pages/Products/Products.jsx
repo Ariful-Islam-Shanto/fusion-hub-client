@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Product from "./Product";
 import {
@@ -18,6 +18,8 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import Navbar from "../../Components/Navbar/Navbar";
+import { AuthContext } from "../../Auth Provider/AuthProvider";
+import Footer from "../../Components/Footer/Footer";
 
 
 const Products = () => {
@@ -26,10 +28,11 @@ const Products = () => {
   const [slide, setSlide] = useState({});
   const [loading, setLoading] = useState(true)
   const { name } = useParams();
+  const {modeTheme} = useContext(AuthContext);
 
  useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/brands/${name}`)
+    fetch(`https://fusion-hub-server.vercel.app/brands/${name}`)
     .then(res => res.json())
     .then(data => {
         setSlide(data || {});
@@ -39,14 +42,11 @@ const Products = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/brandProducts`)
+    setLoading(true)
+    fetch(`https://fusion-hub-server.vercel.app/brandProducts/${name}`)
       .then((res) => res.json())
       .then((data) => {
-        setLoading(true)
-        const newData = data.filter(
-          (newD) => newD.brand.toLowerCase() === name.toLowerCase()
-        );
-        setProducts(newData || []);
+        setProducts(data || []);
         setLoading(false);
       });
   }, [name]);
@@ -63,21 +63,7 @@ const Products = () => {
         <span className="loading text-center loading-spinner loading-lg"></span> 
         </div>
         :
-          <div>
-            {
-                products.length <= 0 ? 
-                
-                <div className="h-[80vh] flex items-center justify-center flex-col space-y-6">
-                    <img src='https://i.ibb.co/tKT2fjC/26690-removebg-preview-1.png' alt="" className="mb-2"/>
-                    <div className="w-2/3">
-                    <h1 className="text-5xl text-center mb-6 text-black font-bold ">Discover Our Leading <span className="text-[#ba1f53]">Brand</span> Partners</h1>
-                    <p className="text-gray text-2xl text-center uppercase leading-7">
-                    At this brand, we're committed to excellence. While we're in the process of bringing you exceptional products from all our brand partners, brand is getting ready to unveil something special. Stay tuned for updates and be the first to experience their exclusive offerings.
-                    </p>
-                    </div>
-                </div>
-           
-        :
+        
       <>
       <div className="relative h-[40vh] md:h-[70vh] lg:h-[70vh] xl:h-[80vh] mx-auto px-3 md:px-6 lg:px-12 xl:px-24 overflow-hidden">
         <div className="relative h-[40vh] md:h-[70vh] lg:h-[70vh] xl:h-[80vh]">
@@ -131,10 +117,27 @@ const Products = () => {
         </div>
         </div>
       </div>
-
-      <div className="py-24">
-      <h1 className='text-2xl md:text-4xl lg:text-4xl xl:text-4xl text-center text-black font-extrabold py-6 pt-12'>Available products from<span className='text-[#a32650] ml-4'>{products[0]?.brand}</span></h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-12 md:gap-4 lg:gap-4 xl:gap-4 py-12 px-3 md:px-6 lg:px-12 xl:px-24 ">
+      </>
+        }
+      <div>
+            {
+                products.length <= 0 ? 
+                
+                <div className="h-[80vh] flex items-center justify-center flex-col space-y-6">
+                    <img src='https://i.ibb.co/tKT2fjC/26690-removebg-preview-1.png' alt="" className="mb-2"/>
+                    <div className="w-full md:w-full p-4 lg:w-2/3 xl:w-2/3">
+                    <h1 className={`text-2xl  md:text-3xl lg:text-4xl xl:text-5xl  text-center mb-6 ${modeTheme === 'dark' ? 'text-white' : 'text-black'} font-bold `}>Discover Our Leading <span className="text-[#ba1f53]">Brand</span> Partners</h1>
+                    <p className=" text-lg md:text-xl lg:text-2xl xl:text-2xl text-center uppercase leading-7">
+                    At this brand, we're committed to excellence. While we're in the process of bringing you exceptional products from all our brand partners, brand is getting ready to unveil something special. Stay tuned for updates and be the first to experience their exclusive offerings.
+                    </p>
+                    </div>
+                </div>
+           
+        :
+        <>
+      <div className="py-3 md:py-6 lg:py-12 xl:py-24">
+      <h1 className={`text-2xl md:text-4xl lg:text-4xl xl:text-4xl text-center ${modeTheme === 'dark' ? 'text-white' : 'text-black'} font-extrabold py-6 pt-12`}>Available products from<span className='text-[#a32650] ml-4'>{products[0]?.brand}</span></h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-24 md:gap-4 lg:gap-4 xl:gap-4 py-12 px-3 md:px-6 lg:px-12 xl:px-24 ">
           {products?.map((product) => (
             <Product key={product._id} product={product}></Product>
           ))}
@@ -143,8 +146,9 @@ const Products = () => {
       </>
        }
   </div>
-}
       </div>
+
+      <Footer></Footer>
     </div>
   );
 };

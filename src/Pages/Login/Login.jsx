@@ -24,7 +24,14 @@ const Login = () => {
             navigate('/');
             // Navigate(location?.state ? location.state : '/');
         })
-        .catch(err => toast.error(err.message));
+        .catch(err => {
+          if(err.message === 'Firebase: Error (auth/invalid-login-credentials).') {
+            toast.error('Login Failed: The username or password you entered is incorrect')
+          }else{
+
+            toast.error(err.message);
+          }
+        });
         
     }
 
@@ -74,9 +81,9 @@ const Login = () => {
         {/* <div className='flex-1'>
             <img src="https://i.ibb.co/tYpncR2/3907317.jpg" alt="" />
         </div> */}
-    <div style={bg} className="relative bg-cover flex-1 flex w-full md:w-full lg:w-3/5 xl:w-2/5 flex-col mx-auto text-gray-700">
+    <div style={bg} className="relative rounded-md bg-cover flex-1 flex w-full md:w-full lg:w-3/5 xl:w-2/5 flex-col mx-auto text-gray-700">
    
-    <div className=' mx-auto w-full bg-transparent backdrop-blur-2xl'>
+    <div className=' mx-auto w-full h-full rounded-lg bg-transparent backdrop-blur-2xl'>
       <h1 className="text-4xl text-center text-gray-800 font-bold py-8 pb-6 ">Login your account</h1>
       <form onSubmit={handleLogIn}>
       <div className="flex flex-col gap-4 p-6">
