@@ -123,7 +123,7 @@ const Products = () => {
             {
                 products.length <= 0 ? 
                 
-                <div className="h-[80vh] flex items-center justify-center flex-col space-y-6">
+                <div className=" flex items-center justify-center flex-col space-y-6">
                     <img src='https://i.ibb.co/tKT2fjC/26690-removebg-preview-1.png' alt="" className="mb-2"/>
                     <div className="w-full md:w-full p-4 lg:w-2/3 xl:w-2/3">
                     <h1 className={`text-2xl  md:text-3xl lg:text-4xl xl:text-5xl  text-center mb-6 ${modeTheme === 'dark' ? 'text-white' : 'text-black'} font-bold `}>Discover Our Leading <span className="text-[#ba1f53]">Brand</span> Partners</h1>

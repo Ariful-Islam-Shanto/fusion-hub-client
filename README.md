@@ -16,4 +16,14 @@ Welcome to Fusion Hub, an exciting fashion and apparel e-commerce website that b
 
 5. **Product Management:** Fusion Hub empowers users by enabling them to update product information. If a user spots incorrect details, they can easily navigate to the product's update page and make the necessary edits.
 
+## Technologies Used
+
+- **Frontend:** **React.js** and **React Router** for building a dynamic and responsive user interface.
+- **Styling:** **Tailwind CSS** for a modern and clean design.
+- **Backend:** **Express.js** as the backend framework for handling server-side logic.
+- **Database:** **MongoDB** 
+for storing and managing product and user data.
+
+Feel free to explore Fusion Hub and experience the seamless integration of these technologies in creating an enjoyable shopping environment.
+
 
